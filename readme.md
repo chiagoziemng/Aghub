@@ -24,4 +24,4 @@ main: This branch represents the production-ready state.
 develop: This branch contains the latest delivered changes for the upcoming release.
 feature: Feature branches are where new capabilities for future releases are being developed.
 release: Release branches serve the purpose of preparing a new production release.
-hotfix: Hotfix branches emerge when a critical bug in production requires an immediate fix.
+hotfix: Hotfix branches emerge when a critical bug in production requires an immediate fix.chi1000jame
