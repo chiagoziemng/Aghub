@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from .models import Post, Comment
+from django.db.models import Count
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.mail import send_mail
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from .forms import EmailPostForm, CommentForm
 from django.views.decorators.http import require_POST
+from taggit.models import Tag, TaggedItem
+
 
 
 @require_POST
@@ -61,8 +64,16 @@ def post_share(request, post_id):
     return render(request, 'blog/post/share.html', {'post': post, 'form': form})
 
 
-def post_list(request):
+def post_list(request, tag_slug=None):
     posts = Post.published.all()
+    tag = None
+
+    if tag_slug:
+        # Get the tag object or return 404 if not found
+        tag = get_object_or_404(Tag, slug=tag_slug) 
+        # Filter published posts to include only those with the specified tag
+        posts = Post.published.filter(pk__in=TaggedItem.objects.filter(tag=tag).values_list('object_id', flat=True))
+        
     # Pagination with 3 posts per page
     paginator = Paginator(posts, 1)
     page_number = request.GET.get('page', 1)
@@ -76,7 +87,7 @@ def post_list(request):
         posts = paginator.page(paginator.num_pages)
 
 
-    return render(request, 'blog/post/list.html', {'posts': posts})
+    return render(request, 'blog/post/list.html', {'posts': posts, 'tag': tag})
 
 
 def post_detail(request, id):
@@ -95,5 +106,16 @@ def post_detail(request, year, month, day, post):
     # Form for users to comment
     form = CommentForm()
 
+    # List of similar posts
+    post_tags_ids = post.tags.values_list('id', flat=True)
+    #similar_posts = Post.published.filter(tags__in=post_tags_ids).exclude(id=post.id)
+    similar_posts = Post.published.filter(pk__in=TaggedItem.objects.filter(tag_id__in=post_tags_ids).values_list('object_id', flat=True)).exclude(id=post.id)
+    #similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags', '-publish')[:4]
+
     
-    return render(request, 'blog/post/detail.html', {'post': post, 'comments': comments, 'form': form})
+    return render(request, 'blog/post/detail.html', 
+                  {'post': post, 
+                   'comments': comments, 
+                   'form': form, 
+                   'similar_posts': similar_posts
+                   })
