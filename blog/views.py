@@ -108,9 +108,8 @@ def post_detail(request, year, month, day, post):
 
     # List of similar posts
     post_tags_ids = post.tags.values_list('id', flat=True)
-    #similar_posts = Post.published.filter(tags__in=post_tags_ids).exclude(id=post.id)
-    similar_posts = Post.published.filter(pk__in=TaggedItem.objects.filter(tag_id__in=post_tags_ids).values_list('object_id', flat=True)).exclude(id=post.id)
-    #similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags', '-publish')[:4]
+    similar_posts = Post.published.filter(tags__in=post_tags_ids).exclude(id=post.id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags', '-publish')[:4]
 
     
     return render(request, 'blog/post/detail.html', 
