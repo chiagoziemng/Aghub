@@ -5,7 +5,7 @@
 
 {% block content %}
 
-    <h1>{{ post.title }}</h1>
+    {% comment %} <h1>{{ post.title }}</h1>
     <p class="date">
         Published {{ post.publish }} by {{ post.author }}
     </p>
@@ -41,5 +41,154 @@
         {% empty %}
         <p>There are no comments.</p>
     {% endfor %}
-        {% include "blog/post/includes/comment_form.html" %}
+        {% include "blog/post/includes/comment_form.html" %} {% endcomment %}
+
+
+
+
+<section id="center" class="center_blogdt pt-5 pb-5 px_4">
+    <div class="container-fluid">
+        <div class="blog_pg1 row">
+            <div class="col-md-8">
+                <div class="blog_1dt">
+                    <div class="blog_1dt1 shadow_box p-4 rounded_30">
+                        <h3 class="mt-4 mb-3">{{ post.title }}</h3>
+                        <div class="blog_1im2">
+                            <ul class="mb-0">
+                                <li class="d-inline-block">
+                                    <a href="#">
+                                        Published {{ post.publish }} by {{ post.author }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><hr/>
+                        <p>
+                            {{ post.body|markdown }}
+                        </p>
+                       
+                        <hr>
+                        <h4 class="mb-3 mt-3 center_sm">
+                            <a href="{% url "blog:post_share" post.id %}">
+                                Click Here to share Post
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="blog_d2 mt-4 shadow_box p-4 rounded_30">
+                        {% with comments.count as total_comments %}
+                            <h4 class="center_sm">
+                               Comments{{ total_comments|pluralize }}  ( {{ total_comments }} )
+                            </h4>
+                        {% endwith %}
+                        
+                        <hr class="line mb-4">
+                        {% for comment in comments %}
+                        <div class="blog_d2i row">
+                            <div class="col-md-10 col-sm-10">
+                                <div class="blog_d2ir">
+                                    <h5>{{ comment.name }}</h5>
+                                    <h6 class="fw-normal mt-3 font_14"><a class="text-muted " href="#"><i class="fa fa-calendar col_blue me-1"></i>{{ comment.created}}</a> <a class="text-muted" href="#"><i class="fa fa-user col_blue me-1 ms-3"></i> {{ comment.name }}</a> <a class="text-muted " href="#"><i class="fa fa-comments col_blue me-1 ms-3"></i> {{ forloop.counter }} Comments</a></h6>
+                                    <p class="mb-0 font_14 mt-3">
+                                        {{ comment.body|linebreaks }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <p>There are no comments.</p>
+                        {% endfor %}
+                       
+                    </div>
+ {% comment %} {% include "blog/post/includes/comment_form.html" %} {% endcomment %}
+
+                    </div>
+                </div>  
+
+
+                <div class="col-md-4">
+                    <div class="blog_pg1r">
+                        <div class="blog_pg1r1 bg_lighto pt-4 pb-4 rounded_30 mt-4">
+                            <h5 class="px-4"> Trending topic <a class="col_blue float-end fs-6" href="#">View all</a></h5>
+                            <hr>
+                            <div class="blog_pg1r1i row px-4">
+                                <div class="col-md-3 col-3">
+                                    <div class="blog_pg1r1il">
+                                        <a href="blog_detail.html"><img src="img/15.jpg" class="w-100 rounded_10" alt="img25"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 col-9">
+                                    <div class="blog_pg1r1ir">
+                                        <h5 class="fs-6"><a href="#">Electronics</a></h5>
+                                        <h6 class="mb-0 font_14">7 Articles</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="blog_pg1r1i row px-4">
+                                <div class="col-md-3 col-3">
+                                    <div class="blog_pg1r1il">
+                                        <a href="blog_detail.html"><img src="img/16.jpg" class="w-100 rounded_10" alt="img25"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 col-9">
+                                    <div class="blog_pg1r1ir">
+                                        <h5 class="fs-6"><a href="#">Industrial</a></h5>
+                                        <h6 class="mb-0 font_14">9 Articles</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="blog_pg1r1i row px-4">
+                                <div class="col-md-3 col-3">
+                                    <div class="blog_pg1r1il">
+                                        <a href="blog_detail.html"><img src="img/17.jpg" class="w-100 rounded_10" alt="img25"></a>
+                                    </div>
+                                </div>
+                            <div class="col-md-9 col-9">
+                                <div class="blog_pg1r1ir">
+                                    <h5 class="fs-6"><a href="#">Tools</a></h5>
+                                    <h6 class="mb-0 font_14">11 Articles</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blog_pg1r1i row px-4">
+                            <div class="col-md-3 col-3">
+                                <div class="blog_pg1r1il">
+                                    <a href="blog_detail.html"><img src="img/18.jpg" class="w-100 rounded_10" alt="img25"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-9">
+                                <div class="blog_pg1r1ir">
+                                    <h5 class="fs-6"><a href="#">Health</a></h5>
+                                    <h6 class="mb-0 font_14">16 Articles</h6>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+
+                    <div class="blog_pg1r1 bg_lighto pt-4 pb-4 rounded_30 mt-4">
+                        <h5 class="px-4">  Popular Posts <a class="col_blue float-end fs-6" href="#">View all</a></h5>
+                        <hr>
+                        <div class="blog_1r1i row px-4">
+                            <div class="col-md-9 col-sm-9">
+                            <div class="blog_1r1ir">
+                                <h6 class="font_13"><img width="40" height="40" src="img/10.jpg" class="rounded-circle me-2" alt="abc"> <span class="fw-bold">Augue Porta</span> - May 27, 2022</h6>
+                                <h5 class="mb-0 fs-6"><a href="blog_detail.html">New tools for Black pregnant and postpartum mothers to save lives</a></h5>
+                            </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                            <div class="blog_1r1il">
+                                <a href="blog_detail.html"><img src="img/22.jpg" class="w-100 rounded_10" alt="img25"></a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>        
 {% endblock  %}

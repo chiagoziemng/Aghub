@@ -1,35 +1,89 @@
 {% extends "blog/base.html" %}
 {% load blog_tags %}
+{% load static %}
 
 {% block title %}My Blog{% endblock  %}
 
 {% block content %}
+<!--  -->
+<section id="center" class="center_blog pt-5 pb-5 px_4">
+	<div class="container-fluid">
+		<div class="blog_pg1 row">
+			<div class="col-md-8">
+				<div class="blog_pg1l">
+					<div class="blog_pg1l1 row">
+                        {% for post in posts %}
+                        <div class="col-md-12">
+                            <div class="blog_pg1l1l">
+                                <h6>                     
+                                    {% for tag in post.tags.all %}
+                                        <a class="bg-primary d-inline-block rounded_30 p-2 px-4  font_13 text-white" href="{% url "blog:post_list_by_tag" tag.slug %}">
+                                            {{ tag.name }}
+                                        </a>
+                                        {% if not forloop.last %}, {% endif %}
+                                    {% endfor %} 
+                                        <!--{{ post.tags.all|join:", "}} -->
+                                </h6>
+                                <h5 class="mt-3 fs-6">
+                                    <a href="{{ post.get_absolute_url }}">
+                                        {{ post.title }}
+                                    </a>
+                                </h5>
+                                <p>
+                                    {{ post.body|markdown|truncatewords_html:30 }}
+                                </p>
+                                <h6 class="font_13">
+                                    <span class="fw-bold">{{ post.author }}</span> - {{ post.publish }}
+                                </h6>
+                                <div class="center_h2i1ili row mt-3">
+                                    <div class="col-md-12 col-12">
+                                        <div class="center_h2i1ilil">
+                                            <ul class="mb-0 tags">
+                                                <li class="d-inline-block"><a class="d-block" href="blog_detail.html"><i class="fa fa-heart me-1 align-middle"></i> 49</a></li>
+                                                <li class="d-inline-block"><a class="d-block" href="blog_detail.html"><i class="fa fa-comment me-1 align-middle"></i> 118</a></li>
+                                            </ul>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% comment %} <div class="col-md-4">
+                            <div class="blog_pg1l1r">
+                            <a href="blog_detail.html"><img src="{% static 'blog/img/47.jpg' %}" alt="abc" class="w-100 rounded_30"></a>
+                            </div>
+                        </div>  {% endcomment %}
+                    <hr>
+                    {% endfor %}
+                        {% include "pagination.html" with page=posts %}
+                    </div>
+			    </div>  
+			</div>
+           
+            <div class="col-md-4">
+                <div class="blog_pg1r1 bg_lighto pt-4 pb-4 rounded_30 mt-4">
+                    <h5 class="px-4">  Latest Posts</h5>
+                    <hr>
+                    {% show_latest_posts 10 %}
+                </div>
 
-<h1>Company Blog</h1>
-{% if tag %}
-    <h2>Posts tagged with "{{ tag.name }}"</h2>
-{% endif %}
-{% for post in posts %}
-    <h2>
-        <a href="{{ post.get_absolute_url }}">
-            {{ post.title }}
-        </a>
-    </h2>
-    <p class="tags">
-        Tags: 
-        {% for tag in post.tags.all %}
-        <a href="{% url "blog:post_list_by_tag" tag.slug %}">
-            {{ tag.name }}
-        </a>
-        {% if not forloop.last %}, {% endif %}
-        {% endfor %} 
-        <!--{{ post.tags.all|join:", "}} -->
-        </p>
-    <p class="date">
-        Published {{ post.publish }} by {{ post.author }}
-    </p>
-    {{ post.body|markdown|truncatewords_html:30 }}
+                <div class="blog_pg1r1 bg_lighto pt-4 pb-4 rounded_30 mt-4">
+                    <h5 class="px-4"> Most commented posts</h5>
+                    <hr>
+                    {% get_most_commented_posts as most_commented_posts  %}
+                    {% for post in most_commented_posts %}
+                        <div class="blog_1r1i row px-4">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="blog_1r1ir">
+                                    <h6 class="font_13">
+                                    <h5 class="mb-0 fs-6"><a href="{{ post.get_absolute_url }}">{{ post.title }}<hr></a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+		</div>
+	</div>
+</section> 
 
-{% endfor %}
-    {% include "pagination.html" with page=posts %}
 {% endblock  %}

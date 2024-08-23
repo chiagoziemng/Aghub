@@ -92,7 +92,7 @@ def post_list(request, tag_slug=None):
         posts = Post.published.filter(pk__in=TaggedItem.objects.filter(tag=tag).values_list('object_id', flat=True))
         
     # Pagination with 3 posts per page
-    paginator = Paginator(posts, 1)
+    paginator = Paginator(posts, 3)
     page_number = request.GET.get('page', 1)
     try:
         posts = paginator.page(page_number)

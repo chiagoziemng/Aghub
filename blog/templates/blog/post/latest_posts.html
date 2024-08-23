@@ -1,7 +1,26 @@
-<ul>
+{% comment %} <ul>
     {% for post in latest_posts %}
         <li>
             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         </li>
     {% endfor %}
-</ul>
+</ul> {% endcomment %}
+
+{% for post in latest_posts %}
+<div class="blog_1r1i row px-4">
+    <div class="col-md-12 col-sm-12">
+        <div class="blog_1r1ir">
+            <h6 class="font_13">
+                {% comment %} <img width="40" height="40" src="img/10.jpg" class="rounded-circle me-2" alt="abc"> {% endcomment %}
+                 
+            <h5 class="mb-0 fs-6"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+            <span class="fw-bold">{{ post.author }}</span> - {{ post.publish }}</h6><hr/>
+        </div>
+    </div>
+    {% comment %} <div class="col-md-3 col-sm-3">
+        <div class="blog_1r1il">
+            <a href="blog_detail.html"><img src="img/22.jpg" class="w-100 rounded_10" alt="img25"></a>
+        </div>
+    </div> {% endcomment %}
+</div>
+{% endfor %}
