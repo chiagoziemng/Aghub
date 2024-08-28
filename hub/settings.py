@@ -110,16 +110,6 @@ DATABASES = {
     )
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'blog',
-#         'USER': 'postgres',
-#         'PASSWORD': '12augustpip',
-#     }
-# }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -186,5 +176,3 @@ EMAIL_HOST_USER = 'chiagoziemleonard@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-

@@ -29,3 +29,13 @@ hotfix: Hotfix branches emerge when a critical bug in production requires an imm
 
 https://www.betaprices.com/charcoal-for-sale-in-nigeria
 https://charcoalexport.tripod.com/
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'blog',
+#         'USER': 'postgres',
+#         'PASSWORD': '',
+#     }
+# }
