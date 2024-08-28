@@ -143,6 +143,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'blog/css'),
+]
+
+
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
@@ -179,3 +184,4 @@ EMAIL_USE_TLS = True
 # Optional: Whitenoise configuration for compressed static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
