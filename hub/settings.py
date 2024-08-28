@@ -174,3 +174,7 @@ EMAIL_HOST_USER = 'chiagoziemleonard@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+# Optional: Whitenoise configuration for compressed static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
