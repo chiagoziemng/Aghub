@@ -30,7 +30,12 @@ SECRET_KEY = 'django-insecure-mj+)#h%5h^*&(l06ofb+d4-%ba(@m38p+paj3pl3u#b^h^35kk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'hub-qmug.onrender.com',
+      # Add your domain names herehttps://hub-qmug.onrender.com/
+    'localhost',
+    '127.0.0.1',
+]
 
 #......
 
