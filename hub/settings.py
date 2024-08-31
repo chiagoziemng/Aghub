@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     # apps
     'blog.apps.BlogConfig',
+    'shop.apps.ShopConfig',
     'pharofleet',
 
     # third-party app
@@ -106,10 +107,16 @@ WSGI_APPLICATION = 'hub.wsgi.application'
 #     }
 # }
 
-# Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://user:password@localhost:5432/hub')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog',
+        'USER': 'postgres',
+        'PASSWORD': '12august',
+    }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -147,6 +154,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog/css'),
