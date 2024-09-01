@@ -41,6 +41,9 @@ ALLOWED_HOSTS = [
 
 SITE_ID = 1
 
+#This is the key that you are going to use to store the cart in the user session
+CART_SESSION_ID = 'cart'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -55,6 +58,7 @@ INSTALLED_APPS = [
     # apps
     'blog.apps.BlogConfig',
     'shop.apps.ShopConfig',
+    'cart.apps.CartConfig',
     'pharofleet',
 
     # third-party app
@@ -89,6 +93,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
             ],
         },
     },
