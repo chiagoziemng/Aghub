@@ -10,7 +10,6 @@ sitemaps = {
 }
 
 urlpatterns = [
-    # path('', include('pharofleet.urls')),  # Include URLs from 'myapp'
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
