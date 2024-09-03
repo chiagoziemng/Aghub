@@ -1,0 +1,60 @@
+<div class="preloader-wrapper">
+    <div class="preloader">
+    </div>
+  </div>
+
+  {% include 'shop/searchpopup.html' %}
+
+<!-- header -->
+  <header id="header">
+    <div id="header-wrap">
+      {% include 'shop/nav1.html' %}
+      <nav class="primary-nav padding-small">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-2 col-md-2">
+              <div class="main-logo">
+                <a href="index.html">
+                  <h2>PharosFleet</h2>
+                  <!-- <img src="images/main-logo.png" alt="logo"> -->
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-10 col-md-10">
+              <div class="navbar">
+
+                <div id="main-nav" class="stellarnav d-flex justify-content-end right">
+                  <ul class="menu-list">
+                    <li><a href="{% url 'shop:index' %}" class="item-anchor active">Home</a></li>
+                    <li><a  class="item-anchor" data-effect="About">About</a></li>
+                    <li><a href="{% url 'shop:product_list' %}" class="item-anchor" data-effect="Shop">Shop</a></li>
+
+                    <li class="menu-item has-sub">
+                      <a href="#" class="item-anchor d-flex align-item-center" data-effect="Pages">Pages<i class="icon icon-chevron-down"></i></a>
+                      <ul class="submenu">
+                        <li><a href="coming-soon.html" class="item-anchor">Coming soon<span class="text-primary"> (PRO)</span></a></li>
+                        <li><a href="login.html" class="item-anchor">Login<span class="text-primary"> (PRO)</span></a></li>
+                        <li><a href="faqs.html" class="item-anchor">FAQs<span class="text-primary"> (PRO)</span></a></li>
+                        <li><a href="styles.html" class="item-anchor">Styles</a></li>
+                        <li><a href="thank-you.html" class="item-anchor">Thankyou</a></li>
+                        <li><a href="error.html" class="item-anchor">Error page<span class="text-primary"> (PRO)</span></a></li>
+                      </ul>
+                    </li>
+
+                        <li><a href="" class="item-anchor">Blog</a></li>
+                       
+
+                    <li><a href="" class="item-anchor" data-effect="Contact">Contact</a></li>
+
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- end header -->
