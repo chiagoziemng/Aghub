@@ -1,3 +1,5 @@
+{% load static %}
+
 <footer id="footer">
     <div class="container">
       <div class="footer-menu-list">
@@ -108,9 +110,9 @@
         <div class="payment-method">
           <p>Payment options :</p>
           <div class="card-wrap">
-            <img src="images/visa-icon.jpg" alt="visa">
-            <img src="images/mastercard.png" alt="mastercard">
-            <img src="images/american-express.jpg" alt="american-express">
+            <img src="{% static 'shop/images/visa-icon.jpg' %}" alt="visa">
+            <img src="{% static 'shop/images/mastercard.png' %}" alt="mastercard">
+            <img src="{% static 'shop/images/american-express.jpg' %}" alt="american-express">
           </div>
         </div>
       </div>

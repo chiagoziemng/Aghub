@@ -3,22 +3,52 @@
  Checkout
 {% endblock %}
 {% block content %}
- <h1>Checkout</h1>
- <div class="order-info">
- <h3>Your order</h3>
- <ul>
- {% for item in cart %}
- <li>
- {{ item.quantity }}x {{ item.product.name }}
- <span>${{ item.total_price }}</span>
- </li>
- {% endfor %}
- </ul>
- <p>Total: ${{ cart.get_total_price }}</p>
- </div>
- <form method="post" class="order-form">
- {{ form.as_p }}
- <p><input type="submit" value="Place order"></p>
- {% csrf_token %}
- </form>
+<hr>
+<div class="container mt-5">
+    <!-- Checkout Heading -->
+    <h1 class="mb-4">Checkout</h1>
+  
+    <!-- Order Summary -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Your Order</h3>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          {% for item in cart %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ item.quantity }}x {{ item.product.name }}
+            <span class="font-weight-bold">${{ item.total_price }}</span>
+          </li>
+          {% endfor %}
+          <li class="list-group-item d-flex justify-content-between align-items-center font-weight-bold">
+            Total:
+            <span>${{ cart.get_total_price }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Enhanced Checkout Form -->
+    <form method="post" class="order-form">
+      {% csrf_token %}
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">Shipping & Payment Details</h3>
+        </div>
+        <div class="card-body">
+            {{ form.as_p }}
+        </div>
+        <div class="card-footer text-right">
+          <button type="submit" class="btn btn-success btn-lg">Place Order</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  
+
+<br>
+<br/>
+<hr>
 {% endblock %}
