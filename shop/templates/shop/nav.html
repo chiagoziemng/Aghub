@@ -26,26 +26,12 @@
                 <div id="main-nav" class="stellarnav d-flex justify-content-end right">
                   <ul class="menu-list">
                     <li><a href="{% url 'shop:index' %}" class="item-anchor active">Home</a></li>
-                    <li><a  class="item-anchor" data-effect="About">About</a></li>
+                    <li><a  class="item-anchor" data-effect="About">Blog</a></li>
                     <li><a href="{% url 'shop:product_list' %}" class="item-anchor" data-effect="Shop">Shop</a></li>
-
-                    <li class="menu-item has-sub">
-                      <a href="#" class="item-anchor d-flex align-item-center" data-effect="Pages">Pages<i class="icon icon-chevron-down"></i></a>
-                      <ul class="submenu">
-                        <li><a href="coming-soon.html" class="item-anchor">Coming soon<span class="text-primary"> (PRO)</span></a></li>
-                        <li><a href="login.html" class="item-anchor">Login<span class="text-primary"> (PRO)</span></a></li>
-                        <li><a href="faqs.html" class="item-anchor">FAQs<span class="text-primary"> (PRO)</span></a></li>
-                        <li><a href="styles.html" class="item-anchor">Styles</a></li>
-                        <li><a href="thank-you.html" class="item-anchor">Thankyou</a></li>
-                        <li><a href="error.html" class="item-anchor">Error page<span class="text-primary"> (PRO)</span></a></li>
-                      </ul>
-                    </li>
-
-                        <li><a href="" class="item-anchor">Blog</a></li>
-                       
-
+                    <li><a  class="item-anchor" data-effect="About">Community</a></li>
+                    <li><a class="item-anchor">E-Learning</a></li>
+                    <li><a class="item-anchor">About Us</a></li>
                     <li><a href="" class="item-anchor" data-effect="Contact">Contact</a></li>
-
                   </ul>
                 </div>
 
@@ -57,4 +43,108 @@
     </div>
   </header>
 
-  <!-- end header -->
+  <!-- <header id="header">
+    <div id="header-wrap">
+      {% include 'shop/nav1.html' %}
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border: none;">
+        <div class="container">
+         
+          <a class="navbar-brand" href="index.html">
+            <h2>PharosFleet</h2>
+          </a>
+  
+          
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+       
+          <div class="collapse navbar-collapse position-fixed top-0 end-0 w-50 h-100 bg-dark p-3" id="navbarNav">
+           
+            <button type="button" class="btn-close text-white position-absolute top-0 end-0 m-3" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Close"></button>
+  
+         
+            <ul class="navbar-nav text-center w-100">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'shop:index' %}">Home</a>
+                <hr class="bg-white">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Blog</a>
+                <hr class="bg-white">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'shop:product_list' %}">Shop</a>
+                <hr class="bg-white">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Community</a>
+                <hr class="bg-white">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">E-Learning</a>
+                <hr class="bg-white">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">About Us</a>
+                <hr class="bg-white">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+   -->
+  <!-- Custom CSS -->
+  <style>
+    /* Remove borders from toggler and navbar */
+    /* .navbar-toggler {
+      border: none;
+    } */
+  
+    /* Toggler icon with dark lines */
+    /* .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    } */
+  
+    /* Remove border when toggler is clicked (active state) */
+    /* .navbar-toggler:focus,
+    .navbar-toggler:active {
+      outline: none;
+      box-shadow: none;
+      border: none;
+    }
+   */
+    /* Half-width menu settings */
+    /* .navbar-collapse {
+      width: 50%; 
+      height: 100%;
+      top: 0;
+      right: 0;
+      background-color: #343a40;
+      z-index: 1050;
+      padding-top: 3rem; Padding from top 
+    }
+   */
+    /* Add the cancel button (X) */
+    /* .btn-close {
+      font-size: 1.5rem;
+    }
+   */
+    /* Center menu items */
+    /* .navbar-nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+  
+    .navbar-nav .nav-item hr {
+      margin: 1rem 0;
+    } */
+  </style>
+  

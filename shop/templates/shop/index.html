@@ -18,13 +18,25 @@
             <div class="banner-content">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-6">
-                    <h2 class="banner-title text-light ">Summer Collection</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
-                    <div class="btn-wrap">
-                      <a href="shop.html" class="btn btn-light btn-medium d-flex align-items-center" tabindex="0">Shop it now <i class="icon icon-arrow-io"></i>
+                  <div class="col-md-7">
+                    <h2 class="text-light">
+                      <b>Empowering Farmers, Promoting Sustainability, and Selling Quality Charcoal.</b>
+                    </h2>
+                    <p class="text-light">
+                      Join our community of farmers and buyers to learn, share, 
+                      and grow together while promoting eco-friendly charcoal production.
+                    </p>                  
+                    <div class="btn-wrap d-flex">
+                      <a class="btn btn-light btn-light-arrow btn-medium d-flex align-items-center" tabindex="0">
+                        Explore the Marketplace 
+                        <i class="icon icon-arrow-io ml-2"></i>
+                      </a>
+                      <a class="btn btn-light btn-light-arrow btn-medium d-flex align-items-center mx-3" tabindex="0">
+                        Join the Network
+                        <i class="icon icon-arrow-io ml-2"></i>
                       </a>
                     </div>
+                    
                   </div>
                 </div>
               </div>
@@ -55,161 +67,218 @@
    <!--  Product -->
    {% include 'shop/product.html' %}
 <!--  -->
-    <section id="testimonials" class="padding-large bg-light-grey no-padding-bottom">
-      <div class="container">
-        <div class="reviews-content">
-          <div class="row d-flex flex-wrap">
-            <div class="col-md-2">
-              <div class="review-icon">
-                <i class="icon icon-right-quote"></i>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="swiper testimonial-swiper overflow-hidden">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="testimonial-detail">
-                      <p>“Dignissim massa diam elementum habitant fames. Id nullam pellentesque nisi, eget cursus dictumst pharetra, sit. Pulvinar laoreet id porttitor egestas dui urna. Porttitor nibh magna dolor ultrices iaculis sit iaculis.”</p>
-                      <div class="author-detail">
-                        <div class="name">By Maggie Rio</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="testimonial-detail">
-                      <p>“Dignissim massa diam elementum habitant fames. Id nullam pellentesque nisi, eget cursus dictumst pharetra, sit. Pulvinar laoreet id porttitor egestas dui urna. Porttitor nibh magna dolor ultrices iaculis sit iaculis.”</p>
-                      <div class="author-detail">
-                        <div class="name">By John Smith</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-arrows">
-                <button class="prev-button">
-                  <i class="icon icon-arrow-left"></i>
-                </button>
-                <button class="next-button">
-                  <i class="icon icon-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+   <hr>
+   <!-- social network -->
+<section class="shoppify-section-banner padding-large">
+  <div class="container">
+    <div class="product-collection">
+      <div class="left-content collection-item">
+        <div class="products-thumb">
+          <img src="{% static 'shop/images/mod1.jpg' %}" alt="collection item" class="large-image image-rounded">
         </div>
-      </div>
-    </section>
-
-   
-
-    <section class="shoppify-section-banner padding-large">
-      <div class="container">
-        <div class="product-collection">
-          <div class="left-content collection-item">
-            <div class="products-thumb">
-              <img src="images/mod1.jpg" alt="collection item" class="large-image image-rounded">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
-              <div class="categories text-light">Denim collection</div>
-              <h3 class="item-title ">The casual selection.</h3>
-              <p class="text-white">Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor egestas condimentum et ac rutrum dui, odio.</p>
-              <div class="btn-wrap">
-                <a href="shop.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>        
-      </div>
-    </section>
-
-    <hr>
-    <section id="latest-blog" class="padding-large">
-      <div class="container">
-        <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
-          <h2 class="section-title">our Journal</h2>
-          <div class="btn-wrap align-right">
-            <a href="blog.html" class="d-flex align-items-center">Read All Articles <i class="icon icon icon-arrow-io"></i>
+        <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
+          <h1 class="item-title ">
+            Showcase a success story or featured member, including their profile and achievements.
+          </h1>
+         <div class="btn-wrap">
+            <a class="d-flex align-items-center">
+              Join the Conversation
+              <i class="icon icon-arrow-io"></i>
             </a>
           </div>
         </div>
-        <div class="row d-flex flex-wrap">
-          <article class="col-md-4 post-item">
-            <div class="image-holder zoom-effect">
-              <a href="single-post.html">
-                <img src="images/post-img1.jpg" alt="post" class="post-image">
-              </a>
-            </div>
-            <div class="post-content d-flex">
-              <div class="meta-date">
-                <div class="meta-day text-primary">22</div>
-                <div class="meta-month">Aug-2021</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="single-post.html">top 10 casual look ideas to dress up your kids</a>
-                </h3>
-                <a href="blog.html" class="blog-categories">Fashion</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-md-4 post-item">
-            <div class="image-holder zoom-effect">
-              <a href="single-post.html">
-                <img src="images/post-img2.jpg" alt="post" class="post-image">
-              </a>
-            </div>
-            <div class="post-content d-flex">
-              <div class="meta-date">
-                <div class="meta-day text-primary">25</div>
-                <div class="meta-month">Aug-2021</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="single-post.html">Latest trends of wearing street wears supremely</a>
-                </h3>
-                <a href="blog.html" class="blog-categories">Trending</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-md-4 post-item">
-            <div class="image-holder zoom-effect">
-              <a href="single-post.html">
-                <img src="images/post-img3.jpg" alt="post" class="post-image">
-              </a>
-            </div>
-            <div class="post-content d-flex">
-              <div class="meta-date">
-                <div class="meta-day text-primary">28</div>
-                <div class="meta-month">Aug-2021</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="single-post.html">types of comfortable clothes ideas for women</a>
-                </h3>
-                <a href="blog.html" class="blog-categories">Inspiration</a>
-              </div>
-            </div>
-          </article>
-        </div>
       </div>
-    </section>
-
-    <section id="brand-collection" class="padding-medium bg-light-grey">
-      <div class="container">
-        <div class="d-flex flex-wrap justify-content-between">
-          <img src="images/brand1.png" alt="phone" class="brand-image">
-          <img src="images/brand2.png" alt="phone" class="brand-image">
-          <img src="images/brand3.png" alt="phone" class="brand-image">
-          <img src="images/brand4.png" alt="phone" class="brand-image">
-          <img src="images/brand5.png" alt="phone" class="brand-image">
-        </div>
-      </div>
-    </section>
-
-  
+    </div>        
+  </div>
+</section>
 <!--  -->
-{% include 'shop/followus.html' %}
-    <!--  -->
- 
+<!-- education -->
+<section id="latest-collection mt-5">
+  <div class="container">
+    <div class="product-collection row">
+      <div class="col-lg-7 col-md-12 left-content">
+        <div class="collection-item">
+          <div class="products-thumb">
+            <img src="{% static 'shop/images/collection-item1.jpg'%}" alt="collection item" class="large-image image-rounded">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
+            <div class="categories">casual collection</div>
+            <h3 class="item-title">street wear.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum.</p>
+            <div class="btn-wrap">
+              <a href="shop.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12 right-content flex-wrap">
+        <div class="collection-item top-item">
+          <div class="products-thumb">
+            <img src="{% static 'shop/images/collection-item2.jpg'%}" alt="collection item" class="small-image image-rounded">
+          </div>
+          <div class="col-md-6 product-entry">
+            <div class="categories">Basic Collection</div>
+            <h3 class="item-title">Basic shoes.</h3>
+            <div class="btn-wrap">
+              <a href="shop.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="collection-item bottom-item">
+          <div class="products-thumb">
+            <img src="{% static 'shop/images/collection-item3.jpg'%}" alt="collection item" class="small-image image-rounded">
+          </div>
+          <div class="col-md-6 product-entry">
+            <div class="categories">Best Selling Product</div>
+            <h3 class="item-title">woolen hat.</h3>
+            <div class="btn-wrap">
+              <a href="shop.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  -->
+<!-- blog -->
+<section id="latest-blog" class="padding-large">
+  <div class="container">
+    <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
+      <h2 class="section-title">our Journal</h2>
+      <div class="btn-wrap align-right">
+        <a href="blog.html" class="d-flex align-items-center">Read All Articles <i class="icon icon icon-arrow-io"></i>
+        </a>
+      </div>
+    </div>
+    <div class="row d-flex flex-wrap">
+      <article class="col-md-4 post-item">
+        <div class="image-holder zoom-effect">
+          <a href="single-post.html">
+            <img src="{% static 'shop/images/post-img1.jpg'%}" alt="post" class="post-image">
+          </a>
+        </div>
+        <div class="post-content d-flex">
+          <div class="meta-date">
+            <div class="meta-day text-primary">22</div>
+            <div class="meta-month">Aug-2021</div>
+          </div>
+          <div class="post-header">
+            <h3 class="post-title">
+              <a href="single-post.html">top 10 casual look ideas to dress up your kids</a>
+            </h3>
+            <a href="blog.html" class="blog-categories">Fashion</a>
+          </div>
+        </div>
+      </article>
+      <article class="col-md-4 post-item">
+        <div class="image-holder zoom-effect">
+          <a href="single-post.html">
+            <img src="{% static 'shop/images/post-img2.jpg'%}" alt="post" class="post-image">
+          </a>
+        </div>
+        <div class="post-content d-flex">
+          <div class="meta-date">
+            <div class="meta-day text-primary">25</div>
+            <div class="meta-month">Aug-2021</div>
+          </div>
+          <div class="post-header">
+            <h3 class="post-title">
+              <a href="single-post.html">Latest trends of wearing street wears supremely</a>
+            </h3>
+            <a href="blog.html" class="blog-categories">Trending</a>
+          </div>
+        </div>
+      </article>
+      <article class="col-md-4 post-item">
+        <div class="image-holder zoom-effect">
+          <a href="single-post.html">
+            <img src="{% static 'shop/images/post-img3.jpg'%}" alt="post" class="post-image">
+          </a>
+        </div>
+        <div class="post-content d-flex">
+          <div class="meta-date">
+            <div class="meta-day text-primary">28</div>
+            <div class="meta-month">Aug-2021</div>
+          </div>
+          <div class="post-header">
+            <h3 class="post-title">
+              <a href="single-post.html">types of comfortable clothes ideas for women</a>
+            </h3>
+            <a href="blog.html" class="blog-categories">Inspiration</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!--  -->
 
+<!-- testimony -->
+<section id="testimonials" class="padding-large bg-light-grey no-padding-bottom">
+  <div class="container">
+    <div class="reviews-content">
+      <div class="row d-flex flex-wrap">
+        <div class="col-md-2">
+          <div class="review-icon">
+            <i class="icon icon-right-quote"></i>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="swiper testimonial-swiper overflow-hidden">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-detail">
+                  <p>“Dignissim massa diam elementum habitant fames. Id nullam pellentesque nisi, eget cursus dictumst pharetra, sit. Pulvinar laoreet id porttitor egestas dui urna. Porttitor nibh magna dolor ultrices iaculis sit iaculis.”</p>
+                  <div class="author-detail">
+                    <div class="name">By Maggie Rio</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-detail">
+                  <p>“Dignissim massa diam elementum habitant fames. Id nullam pellentesque nisi, eget cursus dictumst pharetra, sit. Pulvinar laoreet id porttitor egestas dui urna. Porttitor nibh magna dolor ultrices iaculis sit iaculis.”</p>
+                  <div class="author-detail">
+                    <div class="name">By John Smith</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-arrows">
+            <button class="prev-button">
+              <i class="icon icon-arrow-left"></i>
+            </button>
+            <button class="next-button">
+              <i class="icon icon-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  -->
+<!-- newsletter -->
+<section id="subscribe" class="padding-large">
+  <div class="container">
+    <div class="row">
+      <div class="block-text col-md-6">
+        <div class="section-header">
+          <h2 class="section-title">Subscribe for updates, promotions, or new blog posts.</h2>
+        </div>
+      </div>
+      <div class="subscribe-content col-md-6">
+        <form id="form" class="d-flex justify-content-between">
+          <input type="text" name="email" placeholder="Enter your email addresss here">
+          <button class="btn btn-dark">Subscribe Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+ 
     {% endblock %}

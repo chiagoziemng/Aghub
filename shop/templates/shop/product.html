@@ -1,11 +1,11 @@
 {% load static %}
 
-<section id="featured-products" class="product-store padding-large">
+<section id="featured-products" class="product-store mt-5">
     <div class="container">
       <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
         <h2 class="section-title">Products</h2>            
         <div class="btn-wrap">
-          <a href="shop.html" class="d-flex align-items-center">View all products <i class="icon icon icon-arrow-io"></i></a>
+          <a href="{% url 'shop:product_list' %}" class="d-flex align-items-center">View all products <i class="icon icon icon-arrow-io"></i></a>
         </div>            
       </div>
       
@@ -18,7 +18,9 @@
               </div>
               <div class="cart-concern">
                 <div class="cart-button d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
+                  <button type="button" class="btn-wrap cart-link d-flex align-items-center">
+                    add to cart
+                     <i class="icon icon-arrow-io"></i>
                   </button>
                   <button type="button" class="view-btn tooltip
                       d-flex">
@@ -32,9 +34,12 @@
               </div>
               <div class="product-detail">
                 <h3 class="product-title">
-                  <a href="single-product.html">Full sleeve cover shirt</a>
+                  <a href="single-product.html">Premium Charcoal</a>
                 </h3>
-                <span class="item-price text-primary">$40.00</span>
+                <p>
+                  Higher quality, more uniform charcoal often produced with improved methods.
+                </p>
+                <span class="item-price text-primary">₦40.00</span>
               </div>
             </div>
           </div>
@@ -59,9 +64,12 @@
               </div>
               <div class="product-detail">
                 <h3 class="product-title">
-                  <a href="single-product.html">Volunteer Half blue</a>
+                  <a href="single-product.html">Briquette Charcoal</a>
                 </h3>
-                <span class="item-price text-primary">$38.00</span>
+                <p>
+                  Compressed charcoal dust formed into briquettes.
+                </p>
+                <span class="item-price text-primary">₦38.00</span>
               </div>
             </div>
           </div>
@@ -86,9 +94,12 @@
               </div>
               <div class="product-detail">
                 <h3 class="product-title">
-                  <a href="single-product.html">Double yellow shirt</a>
+                  <a href="single-product.html">Activated Charcoal</a>
                 </h3>
-                <span class="item-price text-primary">$44.00</span>
+                <p>
+                  Highly porous charcoal used for purification and health-related applications.
+                </p>
+                <span class="item-price text-primary">₦44.00</span>
               </div>
             </div>
           </div>
@@ -113,9 +124,12 @@
               </div>
               <div class="product-detail">
                 <h3 class="product-title">
-                  <a href="single-product.html">Long belly grey pant</a>
+                  <a href="single-product.html">Traditional Charcoal</a>
                 </h3>
-                <span class="item-price text-primary">$33.00</span>
+                <p>
+                  Made from hardwood using traditional methods.
+                </p>
+                <span class="item-price text-primary">₦33.00</span>
               </div>
             </div>
           </div>
