@@ -37,6 +37,11 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
+#.....
+LOGIN_REDIRECT_URL = 'account:dashboard'
+LOGIN_URL = 'account:login'
+LOGOUT_URL = 'account:logout'
+
 #......
 
 SITE_ID = 1
@@ -47,6 +52,7 @@ CART_SESSION_ID = 'cart'
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,6 +62,8 @@ INSTALLED_APPS = [
 
 
     # apps
+
+    
     'blog.apps.BlogConfig',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
